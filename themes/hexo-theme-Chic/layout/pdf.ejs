@@ -1,0 +1,117 @@
+<%
+  // 1. 读取 source/pdfFile 下的所有 PDF 文件
+  const fs = require('fs');
+  const path = require('path');
+  const pdfDir = path.join(hexo.source_dir, 'pdfFile');
+  let pdfFiles = [];
+
+  // 2. 筛选 .pdf 文件并整理信息
+  if (fs.existsSync(pdfDir)) {
+    pdfFiles = fs.readdirSync(pdfDir)
+      .filter(file => file.endsWith('.pdf'))
+      .map(file => ({
+        name: file.replace('.pdf', ''),  // 去掉后缀作为显示名称
+        path: `/pdfFile/${file}`,        // PDF 文件路径
+        previewUrl: `/pdfjs-dist/web/viewer.html?file=${encodeURIComponent('/pdfFile/' + file)}`  // PDF.js 预览链接
+      }));
+  }
+%>
+
+<!DOCTYPE html>
+<html lang="<%= config.language || 'zh-CN' %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= page.title %> | <%= config.title %></title>
+  <!-- 引入 Chic 主题的核心样式，保证风格统一 -->
+  <link rel="stylesheet" href="<%- url_for('/css/style.css') %>">
+  <link rel="stylesheet" href="<%- url_for('/css/font-awesome.min.css') %>">
+  <!-- 自定义 PDF 列表样式（适配 Chic 浅灰/极简风格） -->
+  <style>
+    .pdf-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .pdf-title {
+      text-align: center;
+      color: #333;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+    .pdf-list {
+      list-style: none;
+      padding: 0;
+    }
+    .pdf-item {
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      background: #f9f9f9;
+      border-radius: 4px;
+      border-left: 3px solid #666;
+      transition: all 0.2s ease;
+    }
+    .pdf-item:hover {
+      background: #f5f5f5;
+      border-left-color: #42b983;
+      transform: translateX(5px);
+    }
+    .pdf-name {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 0.8rem;
+    }
+    .pdf-links a {
+      margin-right: 1.5rem;
+      color: #42b983;  /* Chic 主题主色调（绿色） */
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .pdf-links a:hover {
+      text-decoration: underline;
+    }
+    .empty-tip {
+      text-align: center;
+      color: #999;
+      font-size: 1.1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- 复用 Chic 主题的头部（包含导航栏） -->
+  <%- partial('_partial/header') %>
+
+  <!-- PDF 列表核心区域 -->
+  <div class="pdf-container">
+    <h1 class="pdf-title"><%= page.title %></h1>
+    <% if (pdfFiles.length === 0) { %>
+      <p class="empty-tip">暂无 PDF 资源</p>
+    <% } else { %>
+      <ul class="pdf-list">
+        <% pdfFiles.forEach(file => { %>
+          <li class="pdf-item">
+            <div class="pdf-name"><%= file.name %></div>
+            <div class="pdf-links">
+              <a href="<%= file.previewUrl %>" target="_blank">
+                <i class="fa fa-file-pdf-o"></i> 在线预览
+              </a>
+              <a href="<%= file.path %>" target="_blank" download>
+                <i class="fa fa-download"></i> 下载 PDF
+              </a>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </div>
+
+  <!-- 复用 Chic 主题的底部 -->
+  <%- partial('_partial/footer') %>
+
+  <!-- 引入 Chic 主题的核心脚本 -->
+  <script src="<%- url_for('/js/script.js') %>"></script>
+</body>
+</html>

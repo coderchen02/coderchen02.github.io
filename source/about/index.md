@@ -43,7 +43,7 @@ date: 2026-01-08 17:52:21
 - 技术栈：Hexo + GitPage + Chic主题
 - 核心功能：文章分类/标签、搜索功能、代码高亮、响应式布局（适配手机/PC）
 - 优化点：自定义主题样式、添加SEO元标签、配置CDN加速静态资源
-- 地址：[你的博客地址，如：https://coderchen02.github.io]
+- 地址：[https://coderchen02.github.io]
 
 ### 2. [其他项目名称，如：XX管理系统前端]
 - 技术栈：Vue3 + Element Plus + Axios
