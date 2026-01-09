@@ -103,4 +103,4 @@ theme: hexo-theme-Chic
 deploy:
   type: git
   repo: git@github.com:coderchen02/coderchen02.github.io.git
-  branch: master
+  branch: gh-pages
