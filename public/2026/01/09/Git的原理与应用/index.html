@@ -13,7 +13,7 @@
 
 
 
-<title>Git的原理与应用 | 欢迎来到小晨的blog</title>
+<title>欢迎来到小晨的blog</title>
 
 
 
@@ -74,11 +74,11 @@
                 
                     <a class="menu-item" href="/archives">Posts</a>
                 
-                    <a class="menu-item" href="/category">Categories</a>
+                    <a class="menu-item" href="/category">分类</a>
                 
-                    <a class="menu-item" href="/tag">Tags</a>
+                    <a class="menu-item" href="/tag">标签</a>
                 
-                    <a class="menu-item" href="/about">About</a>
+                    <a class="menu-item" href="/about">关于我</a>
                 
                     <a class="menu-item" href="/pdf">Pdf</a>
                 
@@ -101,11 +101,11 @@
                 
                     <a class="menu-item" href="/archives">Posts</a>
                 
-                    <a class="menu-item" href="/category">Categories</a>
+                    <a class="menu-item" href="/category">分类</a>
                 
-                    <a class="menu-item" href="/tag">Tags</a>
+                    <a class="menu-item" href="/tag">标签</a>
                 
-                    <a class="menu-item" href="/about">About</a>
+                    <a class="menu-item" href="/about">关于我</a>
                 
                     <a class="menu-item" href="/pdf">Pdf</a>
                 
@@ -197,7 +197,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Git的原理与应用</h1>
+            <h1 class="post-title"></h1>
             
                 <div class="post-meta">
                     
@@ -206,23 +206,34 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">一月 9, 2026&nbsp;&nbsp;17:10:42</a>
+                        Date: <a href="#">一月 9, 2026&nbsp;&nbsp;17:10:43</a>
                         </span>
                     
-                    
-                        <span class="post-category">
-                    Category:
-                            
-                                <a href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-                            
-                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <h1 id="GIT原理与使用"><a href="#GIT原理与使用" class="headerlink" title="GIT原理与使用"></a>GIT原理与使用</h1><h2 id="1、Git的安装"><a href="#1、Git的安装" class="headerlink" title="1、Git的安装"></a>1、Git的安装</h2><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><ol>
+            <p><a href="/source/pdfFile/GIT%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BD%BF%E7%94%A8">本文的pdf文档</a></p>
+<h1 id="1、Git的安装"><a href="#1、Git的安装" class="headerlink" title="1、Git的安装"></a>1、Git的安装</h1><h2 id="1-1-linux"><a href="#1-1-linux" class="headerlink" title="1.1 linux"></a>1.1 linux</h2><ol>
+<li>centos平台下的安装<br>使用命令：<blockquote>
+<p>sudo yum install git</p>
+</blockquote>
+</li>
+</ol>
+<p>查看Git安装的版本：</p>
+<blockquote>
+<p>git –version</p>
+</blockquote>
+<ol start="2">
+<li>ubuntu平台下的安装<br>使用命令：<blockquote>
+<p>sudo apt-get install git</p>
+</blockquote>
+</li>
+</ol>
+<p>查看Git安装的版本的命令和centos平台下一样。</p>
+<h2 id="1-2-windows"><a href="#1-2-windows" class="headerlink" title="1.2 windows"></a>1.2 windows</h2><ol>
 <li><p>工作区、暂存区、版本库</p>
 <ul>
 <li><p>工作区：是在电脑上你要写代码或文件的目录</p>
@@ -274,18 +285,72 @@
 <ul>
 <li><strong>git checkout – [file]</strong>: 对于工作区的代码，还没有add的时候，我们可以使用这个命令让工作区的文件回到最近一次add或commit时的状态</li>
 </ul>
-<h2 id="2、分支管理"><a href="#2、分支管理" class="headerlink" title="2、分支管理"></a>2、分支管理</h2><h3 id="2-1-理解分支"><a href="#2-1-理解分支" class="headerlink" title="2.1 理解分支"></a>2.1 理解分支</h3><blockquote>
-<p>如何理解分支呢？<br>分支就是平行宇宙，当你在学习c++的时候，另一个你正在另一个平行宇宙里努力学习JAVA。当有一天两个平行宇宙合并到了一起，那么你就既学会了C++也学会了JAVA；</p>
-</blockquote>
 </li>
 </ul>
+<h1 id="2、分支管理"><a href="#2、分支管理" class="headerlink" title="2、分支管理"></a>2、分支管理</h1><h2 id="2-1-理解分支"><a href="#2-1-理解分支" class="headerlink" title="2.1 理解分支"></a>2.1 理解分支</h2><blockquote>
+<p>如何理解分支呢？<br>分支就是平行宇宙，当你在学习c++的时候，另一个你正在另一个平行宇宙里努力学习JAVA。当有一天两个平行宇宙合并到了一起，那么你就既学会了C++也学会了JAVA；</p>
+</blockquote>
 <p>git支持我们查看或者创建其他分支，可以通过git branch查看本地现有的分支 ，并且通过git branch [分支名] 创建新分支。<br>                <img src="https://i-blog.csdnimg.cn/direct/9e9b353c7f3d438ca72d0cf42732aeab.png" alt="在这里插入图片描述"><br>当我们创建新的分支以后，Git新建了一个指针叫test,*表示当前HEAD指向的分支是master分支，</p>
-<h3 id="2-2-切换分支"><a href="#2-2-切换分支" class="headerlink" title="2.2 切换分支"></a>2.2 切换分支</h3><p>我们可以通过命令 &#x3D;&#x3D;git checkout&#x3D;&#x3D; 进行切换分支。<br><img src="https://i-blog.csdnimg.cn/direct/d10e54e19ac8496f929033abcdefeca7.png" alt="在这里插入图片描述"><br><img src="https://i-blog.csdnimg.cn/direct/d34af21d53984f78a3bfa6da2390cdfa.png" alt="在这里插入图片描述"></p>
+<h2 id="2-2-切换分支"><a href="#2-2-切换分支" class="headerlink" title="2.2 切换分支"></a>2.2 切换分支</h2><p>我们可以通过命令 &#x3D;&#x3D;git checkout&#x3D;&#x3D; 进行切换分支。<br><img src="https://i-blog.csdnimg.cn/direct/d10e54e19ac8496f929033abcdefeca7.png" alt="在这里插入图片描述"><br><img src="https://i-blog.csdnimg.cn/direct/d34af21d53984f78a3bfa6da2390cdfa.png" alt="在这里插入图片描述"></p>
 <p>可以看到切换分支成功，HEAD指向了test分支。接下来在test分支下创建一个hello.md文件并且进行提交。<br><img src="https://i-blog.csdnimg.cn/direct/f1d5ad5fe1274f8cb667bd06bdaef019.png" alt="在这里插入图片描述"><br>这个时候我们切换回master分支，查看hello.md文件，发现在master分支下没有这个文件<br><img src="https://i-blog.csdnimg.cn/direct/cd76517057b04461b835daa0b971b52b.png" alt="在这里插入图片描述">那我们在test分支下是否还有这个文件？经验证在test分支下这个文件是存在的，但是为什么在master分支下这个文件就看不到呢？？？<br>我们查看一下master和test分支的指向，发现两者的指向是不一样的<br><img src="https://i-blog.csdnimg.cn/direct/17ae3ca0a50043bea94b0a64671febd5.png" alt="在这里插入图片描述"><br>看到这里就明白了，因为我们是在test分支上提交的，而master分支此刻的提交点没有变化，此时的状态图如下：<br><img src="https://i-blog.csdnimg.cn/direct/0da2fe47e3b947bd9bbea8741accad86.png" alt="在这里插入图片描述"><br>当切换到master分支时，HEAD就指向了master,当然看不到创建的文件了。</p>
 <h2 id="2-3-合并分支"><a href="#2-3-合并分支" class="headerlink" title="2.3 合并分支"></a>2.3 合并分支</h2><p>为了在master分支上能看到最新的提交，就需要将test分支合并到master分支<br><img src="https://i-blog.csdnimg.cn/direct/ecc98bcd036149b8a68c342b2a5c8c12.png" alt="在这里插入图片描述"></p>
 <p>&#x3D;&#x3D;git merge&#x3D;&#x3D; 命令用于合并指定分支到当前分支。合并后，master分支就能看到test分支提交的文件。此时的状态如下图所示：<br><img src="https://i-blog.csdnimg.cn/direct/04e8ee50664842d390552b00adf949de.png" alt="在这里插入图片描述"></p>
 <h2 id="2-4-删除分支"><a href="#2-4-删除分支" class="headerlink" title="2.4 删除分支"></a>2.4 删除分支</h2><p>合并完成后，test分支对于我们就没有用了，那么test分支就可以删除了，注意如果当前正处于某<br>分⽀下，就不能删除当前分⽀。⽽可以在其他分⽀下删除当前分⽀。<br><img src="https://i-blog.csdnimg.cn/direct/f484a11084cc4705b49860f7e3c45195.png" alt="在这里插入图片描述"><br>此时的状态图如下图所示：<br><img src="https://i-blog.csdnimg.cn/direct/0220a1e8d1c64d0fa3065bad738a6d20.png" alt="在这里插入图片描述"></p>
 <h2 id="2-5-合并冲突"><a href="#2-5-合并冲突" class="headerlink" title="2.5 合并冲突"></a>2.5 合并冲突</h2><p>在实际的分⽀合并的时候，并不是想合并就能合并成功的，有时候可能会遇到代码冲突的问题。<br>我们这里创建一个dev分支用来演示，创建dev分支并切换到dev分支。<br><img src="https://i-blog.csdnimg.cn/direct/249fdf619b52474da199b214534bd196.png" alt="在这里插入图片描述"><br>在dev分支下修改hello.md文件并且进行提交一次。<br><img src="https://i-blog.csdnimg.cn/direct/608f1d9c33884816977528bfdaa860b4.png" alt="在这里插入图片描述"><br>此时按照我们之前所示切换回master分支，应该是看不到在dev分支下添加的文字的，事实也是这样的。这个时候我们在master分支下也对hello文件进行添加内容并提交，如下图所示：<br><img src="https://i-blog.csdnimg.cn/direct/ce3c26abad3342049c1afb8f43fe30d2.png" alt="在这里插入图片描述"><br>现在master分支和dev分支都有了各自的提交，此时的状态变成了这样：<br><img src="https://i-blog.csdnimg.cn/direct/cfd42e7844c8479a9673e75a118b9f4b.png" alt="在这里插入图片描述"><br>这种情况下，Git 只能试图把各⾃的修改合并起来，但这种合并就可能会有冲突，如下所⽰：<br><img src="https://i-blog.csdnimg.cn/direct/826a055efdb741e0939023ccabe5edd4.png" alt="在这里插入图片描述"><br>发现 ReadMe ⽂件有冲突后，可以直接查看⽂件内容，要说的是 Git 会⽤ &lt;&lt;&lt;，  &#x3D;&#x3D;&#x3D;，&gt;&gt;&gt;<br>来标记出不同分⽀的冲突内容，如下所⽰:<br><img src="https://i-blog.csdnimg.cn/direct/596e7521f8704621980d1e059e16c5fa.png" alt="在这里插入图片描述"><br>此时我们必须要手动调整冲突代码，并需要再次提交修正后的结果！<br><img src="https://i-blog.csdnimg.cn/direct/468dd1ddd2cb4185b81073ed4ca38b20.png" alt="在这里插入图片描述"><br>到这里冲突就解决结束了，此时的状态为：<br><img src="https://i-blog.csdnimg.cn/direct/765b9717fbd2499e93bdb5741cd4b5d6.png" alt="在这里插入图片描述"><br>最后删除这个示例用的dev分支。</p>
+<h2 id="2-6-删除临时分支"><a href="#2-6-删除临时分支" class="headerlink" title="2.6 删除临时分支"></a>2.6 删除临时分支</h2><p>添加⼀个新功能时，你肯定不希望因为⼀些实验性质的代码，把主分⽀搞乱了，所以，每添加⼀个新功能，最好新建⼀个分⽀，我们可以将其称之为  &#x3D;&#x3D;feature&#x3D;&#x3D;  分⽀，在上⾯开发，完成后，合并，最后，删除该 feature 分⽀。<br>可是，如果我们今天正在某个 feature 分⽀上开发了⼀半，被产品经理突然叫停，说是要停⽌新功能的开发。虽然白干了，但是这个 feature 分⽀还是必须就地销毁，留着⽆⽤了。这时使⽤传统的 git branch -d 命令删除分⽀的⽅法是不⾏的（git branch -d 是 Git 提供的安全删除分支命令，它的设计初衷是防止你误删包含 “未合并到当前分支（通常是主分支）” 提交记录的分支 —— 因为这些提交记录一旦删除，就可能永久丢失（除非你知道提交哈希值去恢复））<br>此时使用强制删除命令 &#x3D;&#x3D;git branch -D [分支名]&#x3D;&#x3D; 就可以删除临时分支。</p>
+<h1 id="3、远程操作"><a href="#3、远程操作" class="headerlink" title="3、远程操作"></a>3、远程操作</h1><h2 id="3-1-远程仓库"><a href="#3-1-远程仓库" class="headerlink" title="3.1 远程仓库"></a>3.1 远程仓库</h2><p>Git 是分布式版本控制系统，同⼀个 Git 仓库，可以分布到不同的机器上。实际情况往往是这样，找⼀台电脑充当服务器的角色，每天24⼩时开机，其他每个⼈都从这个“服务器”仓库克隆⼀份到⾃⼰的电脑上，并且各⾃把各⾃的提交推送到服务器仓库⾥，也从服务器仓库中拉取别⼈的提交。<br>完全可以⾃⼰搭建⼀台运⾏ Git 的服务器，不过现阶段，为了学 Git 先搭个服务器绝对是⼩题⼤作。好在这个世界上有个叫 GitHub 的神奇的⽹站，从名字就可以看出，这个⽹站就是提供 Git 仓库托管服务的，所以，只要注册⼀个GitHub账号，就可以免费获得 Git 远程仓库。<br>GitHub仓库的创建和克隆这里略过。<br>当我们从远程仓库克隆后，实际上 Git 会⾃动把本地的 master 分⽀和远程的 master 分⽀对应起来，并且，远程仓库的默认名称是 origin 。在本地我们可以使⽤ git remote (＋参数v可以显示更多信息）命令，来查看远程库的信息，<br><img src="https://i-blog.csdnimg.cn/direct/ac3cc7e6b75f4ea98936dd03a2f96e0d.png" alt="在这里插入图片描述"><br>上⾯显示了可以抓取和推送的origin的地址。如果没有推送权限，就看不到 push 的地址。<br>&#x3D;&#x3D;git push origin master&#x3D;&#x3D;  ：首次推送时，绑定本地 master 到 origin&#x2F;master 并推送<br>&#x3D;&#x3D;git push&#x3D;&#x3D; ：普通推送<br>如果在远端仓库进行了修改，此时，远程仓库是要领先于本地仓库⼀个版本，为了使本地仓库保持最新的版本，我们需要拉取下远端代码，并合并到本地。Git 提供了 git pull 命令，该命令⽤于从远程获取代码并合并本地的版本。如下所示<br><img src="https://i-blog.csdnimg.cn/direct/2d2ef8175c5e4110a92341039b58c908.png" alt="在这里插入图片描述"></p>
+<h2 id="3-2-配置Git"><a href="#3-2-配置Git" class="headerlink" title="3.2 配置Git"></a>3.2 配置Git</h2><ol>
+<li>忽略特殊文件<br>在日常开发中，我们有些⽂件不想或者不应该提交到远端，比如保存了数据库密码的配置⽂件，那怎么让 Git 知道呢？在 Git ⼯作区的根目录下创建⼀个特殊的 .gitignore ⽂件，然后把要忽略的文件名填进去，Git 就会自动忽略这些文件了。<br>例如我们想忽略以.so和.ini结尾的所有文件，.gitignore的内容如下：<blockquote>
+<p> #my configurations</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p> *.so<br> *.ini<br> #也可指定具体的文件，这个我们测试使用test.txt<br> test.txt</p>
+</blockquote>
+<p>写好.gitignore之后进行添加到暂存区并且推送到远端。<br>此时我们在本地添加两个测试文件testini.ini和test.txt之后<br><img src="https://i-blog.csdnimg.cn/direct/fcb40c58fb88459bab664fd529c97b22.png" alt="在这里插入图片描述"><br>检验 .gitignore 的标准就是 git status 命令是不是说 working tree clean 。我们发现Git 并没有提⽰在工作区中有文件新增，果然 .gitignore ⽣效了。<br>但是有些时候，你就是想添加⼀个文件到 Git，但由于这个⽂件被 .gitignore 忽略了，根本添加不了，那么可以⽤ -f 强制添加</p>
+<blockquote>
+<p>$ git add -f [filename]</p>
+</blockquote>
+<h2 id="3-3-标签管理"><a href="#3-3-标签管理" class="headerlink" title="3.3 标签管理"></a>3.3 标签管理</h2><ol>
+<li>理解标签<br>标签 tag ，可以简单的理解为是对某次 commit 的⼀个标识，相当于起了⼀个别名。例如，在项目发布某个版本的时候，针对最后⼀次 commit 起⼀个 v1.0 这样的标签来标识⾥程碑的意义。当我们需要回退到某个重要版本时，直接使⽤标签就能很快定位到。</li>
+<li>创建标签<br>首先切换到需要打标签的分支上，然后使用命令git tag [name] 就可以打一个标签。可以使用git tag 来查看所有标签。默认标签是打在最新提交的 commit 上的。如果需要对特定提交打标签，只需要使用命令 git tag [name] [commid_id]。<br><img src="https://i-blog.csdnimg.cn/direct/486666a4458745abafd67e6205089019.png" alt="在这里插入图片描述"><br>Git 还提供可以创建带有说明的标签，⽤-a指定标签名，-m指定说明⽂字，格式为<blockquote>
+<p>git tag -a [name] -m “xxx” [commit_id]</p>
+</blockquote>
+</li>
+<li>操作标签<br>删除标签命令：<blockquote>
+<p>git tag -d [name]</p>
+</blockquote>
+</li>
+</ol>
+<p>如果要推送某个标签到远端，使用命令：</p>
+<blockquote>
+<p>git push origin [tag_name]</p>
+</blockquote>
+<p>当然如果在本地有很多标签，也可以一次性推送到远端：</p>
+<blockquote>
+<p>git push origin –tags</p>
+</blockquote>
+<p>如果标签已经推送到远程，要删除远程标签就⿇烦⼀点，先从本地删除，然后，从远程删除。删除命令也是push，但是格式如下：</p>
+<blockquote>
+<p>git push origin :ref&#x2F;tags&#x2F;[tag_name]</p>
+</blockquote>
+<h2 id="3-4-多人协作"><a href="#3-4-多人协作" class="headerlink" title="3.4 多人协作"></a>3.4 多人协作</h2><p>目前我们已经掌握了Git 的所有本地库的相关操作，git基本操作，分支理解，版本回退，冲突解决等等。但是在项目开发中，往往是多个人在一个分支上共同开发，比如多个人在dev分支上进行开发。</p>
+<ol>
+<li>首先开发的时候使用git pull 拉取分支最新的代码。</li>
+<li>同事A在dev分支上进行了开发，并且通过git push origin dev 推送到了远端</li>
+<li>这个时候同事A推送到修改代码已经可以在远端看到，如果你碰巧也需要对其中一个文件修改，并且尝试推送到远端的dev分支，这个时候会推送失败，因为你的你伙伴的最新提交和你推送的提交有冲突。</li>
+<li>解决办法也很简单，先用 git pull 把最新的提交origin&#x2F;dev 抓下来，然后，在本地进行合并，并解决冲突，再推送。操作如下：<blockquote>
+<ol>
+<li>git pull</li>
+<li>cat [冲突文件]</li>
+<li>手动处理冲突</li>
+<li>重新添加到暂存区并推送到远端dev分支</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<p>由此，两名开发者已经开始可以进行协同开发了，不断的 git pull&#x2F;add&#x2F;commit&#x2F;push ,遇到了冲突，就使用我们之前讲的冲突处理解决掉冲突。<br>总结⼀下，在同⼀分支下进行多⼈协作的工作模式通常是这样：<br>• 首先，可以试图用 git push origin branch-name 推送自己的修改；<br>• 如果推送失败，则因为远程分支比你的本地更新，需要先用 git pull 试图合并；<br>• 如果合并有冲突，则解决冲突，并在本地提交；<br>• 没有冲突或者解决掉冲突后，再⽤git push origin branch-name推送就能成功！<br>• 功能开发完毕，将分⽀ merge 进 master，最后删除分支。</p>
 
         </div>
 
@@ -323,12 +388,6 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
-                    
-                        <a href="/tags/Git/"># Git</a>
-                    
-                        <a href="/tags/%E6%95%99%E7%A8%8B/"># 教程</a>
-                    
-                        
                 </span>
             </div>
             <div>
